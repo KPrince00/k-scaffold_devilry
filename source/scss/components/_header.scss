@@ -1,6 +1,10 @@
 //This file will define how our header section is laid out.
 @use '_mixinsandplaceholders';
 #character-header{
+  padding-top: 10px;
+  border-top: 2px solid white;
+  position: relative;
+  top: -10px;
   display:grid;
   gap:var(--half-gap);
   grid-template-columns:14rem;

@@ -1,0 +1,61 @@
+//This file will define how our header section is laid out.
+@use '_mixinsandplaceholders';
+#character-header{
+  display:grid;
+  gap:var(--half-gap);
+  grid-template-columns:14rem;
+  grid-auto-columns: 2fr;
+  grid-auto-flow: column;
+  align-items: start;
+  justify-items: center;
+  .character-details{
+    display:grid;
+    grid-template-columns:repeat(15,2em);
+    gap:var(--half-gap);
+    > :not(:is(.span-2,.span-all)){
+      justify-self:end;
+    }
+  }
+}
+label.input-label { 
+  min-width: 0 !important;
+  max-width: 100% !important;
+  display: inline-flex;
+  flex-direction: column-reverse !important;
+  input.bigin.bigin.bigin.bigin {
+    padding-top: 1em;
+    display: flex;
+    width: 8em;
+    font-size:x-large;
+    justify-content: center;
+    position: relative;
+    color: var(--fontColor);
+  }
+  
+  span.bigin.bigin.bigin.bigin {
+    display:flex;
+    font-size: smaller;
+    width: 6em;
+  }
+
+  input.littlein.littlein.littlein.littlein {
+    font-size: medium;
+    justify-content: center;
+    width: 100%;
+    color: var(--fontColor);
+    border: 2px dashed var(--borderColor);
+    border-radius: 2px;
+  }
+  
+  span.littlein.littlein.littlein.littlein {
+    font-size:smaller;
+  }
+}
+
+.span-5 {
+  grid-column-start: span 5 !important;
+}
+
+.span-4 {
+  grid-column-start: span 4 !important;
+}

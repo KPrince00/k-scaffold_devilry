@@ -1,0 +1,54 @@
+header(data-i18n-aria-label='character header')#character-header.header.span-all
+    +input-label({
+        label:'Character Name',
+        inputObj:{name:'character name',class:'underlined bigin',type:'text'},
+        divObj:{class:'span-all'},
+        spanObj:{role:'heading','aria-level':5,class:'bigin'}
+    })
+    section.character-details
+        +input-label({
+            label:'Species and Name',
+            inputObj:{name:'species',class:'littlein',type:'text'},
+            divObj:{class:'span-5'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Predator Type',
+            inputObj:{name:'predator',class:'littlein',type:'text'},
+            divObj:{class:'span-4'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Fear Rating',
+            inputObj:{name:'fear',class:'littlein',type:'number'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Character Concept',
+            inputObj:{name:'concept',class:'littlein',type:'text'},
+            divObj:{class:'span-5'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Bane',
+            inputObj:{name:'bane',class:'littlein',type:'text'},
+            divObj:{class:'span-4'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Severity',
+            inputObj:{name:'severity',class:'littlein',type:'number'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Nature/Demeanor',
+            inputObj:{name:'nature',class:'littlein',type:'text'},
+            divObj:{class:'span-5'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Experience Points',
+            inputObj:{name:'xp',class:'littlein',type:'number'},
+            divObj:{class:'span-5'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })

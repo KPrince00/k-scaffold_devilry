@@ -7,9 +7,9 @@ include ./sections/_index.pug
 //- Now, for our actual sheet. We'll wrap this in a main element and give it an ID of main.
 main#main-nav
   +tabs({name:'devilry',defaultActiveTab:'statistics'})
-    +tab({name:'statistics',container:'article',button:{content:'Stats &nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'},active:true})
-      include ./views/_abilities.pug
-    +tab({name:'info',container:'article',button:{content:'Info &nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'}})
+    +tab({name:'statistics',container:'article',button:{content:'Stats &nbsp;&nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'},active:true})
+      include ./views/_stats.pug
+    +tab({name:'info',container:'article',button:{content:'Info &nbsp;&nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'}})
       include ./views/_index.pug
     +tab({name:'domains',container:'article',button:{content:'Domains &nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'}})
       include ./views/_index.pug

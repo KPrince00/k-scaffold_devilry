@@ -1,5 +1,14 @@
 {
   "ability name": "ability name",
   "archetype abilities": "archetype abilities",
-  "strength": "strength"
+  "Bane": "Bane",
+  "Character Concept": "Character Concept",
+  "character header": "character header",
+  "Character Name": "Character Name",
+  "Experience Points": "Experience Points",
+  "Fear Rating": "Fear Rating",
+  "Nature/Demeanor": "Nature/Demeanor",
+  "Predator Type": "Predator Type",
+  "Severity": "Severity",
+  "Species and Name": "Species and Name"
 }

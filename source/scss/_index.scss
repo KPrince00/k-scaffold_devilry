@@ -1,5 +1,6 @@
 @use './variables';
 @use 'components/_nav.scss';
+@use 'components/_header.scss';
 
 @mixin variables{
   @include variables.all;

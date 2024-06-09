@@ -9,4 +9,16 @@
     grid-auto-flow: column;
     align-items: start;
     justify-items: center;
-  }
+
+    .fill-left__radio[name="attr_body"] {
+      background-color:var(--bodyColor);
+    }
+
+    .fill-left__radio[name="attr_mind"] {
+      background-color:var(--mindColor);
+    }
+
+    .fill-left__radio[name="attr_spirit"] {
+      background-color:var(--spiritColor);
+    }
+}

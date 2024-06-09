@@ -1,10 +1,11 @@
 //- components/_abilities.pug
 include ./_pipFill.pug
 .attribute-view
-    each ability in ['body', 'mind', 'spirit']
-      +pipFill(ability, '[]', 5)
-+scss.
-  .attribute-view{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  }
+  -
+    const attributeArray = [
+        {attribute: 'body', affectsList: ['speed']},
+        {attribute: 'mind', affectsList: ['speed','willpower']},
+        {attribute: 'spirit', affectsList: ['willpower']},
+    ];
+  each attr in attributeArray
+    +pipFill(attr.attribute, attr.affectsList, 5, null, null)

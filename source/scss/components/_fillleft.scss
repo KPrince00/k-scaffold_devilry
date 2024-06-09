@@ -8,18 +8,6 @@
         width: 2em;
     }
 
-    .fill-left__radio[name="attr_body"] {
-        background-color:var(--bodyColor);
-    }
-
-    .fill-left__radio[name="attr_mind"] {
-        background-color:var(--mindColor);
-    }
-
-    .fill-left__radio[name="attr_spirit"] {
-        background-color:var(--spiritColor);
-    }
-
     .fill-left__radio:checked {
         background-color: transparent;
     }

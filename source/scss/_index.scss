@@ -3,6 +3,7 @@
 @use 'components/_statheader.scss';
 @use 'components/_fillleft.scss';
 @use 'components/_attributes.scss';
+@use 'components/_pools.scss';
 
 @mixin variables{
   @include variables.all;
@@ -18,6 +19,7 @@
   // Put your generic sheet styling here
   top:-50px;
   color: black;
+  box-sizing:border-box !important;
 }
 @mixin roll{
   @include generic;

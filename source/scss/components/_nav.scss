@@ -18,6 +18,7 @@
 	z-index:999;
 	box-shadow:30px 0 var(--backColor),-30px 0 var(--backColor);
   color:var(--fontColor);
+  box-sizing:border-box !important;
 }
 .tabs--devilry__button.tabs--devilry__button.tabs--devilry__button.tabs--devilry__button{
     color: var(--fontColor);

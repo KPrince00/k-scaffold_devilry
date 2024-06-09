@@ -1,0 +1,26 @@
+.fill-left.fill-left.fill-left.fill-left {
+    place-content: center;
+    .fill-left__radio {
+        background-color: grey;
+        margin-right: 0.25rem;
+        border: 2px solid #eee;
+        height: 2em;
+        width: 2em;
+    }
+
+    .fill-left__radio[name="attr_body"] {
+        background-color:var(--bodyColor);
+    }
+
+    .fill-left__radio[name="attr_mind"] {
+        background-color:var(--mindColor);
+    }
+
+    .fill-left__radio[name="attr_spirit"] {
+        background-color:var(--spiritColor);
+    }
+
+    .fill-left__radio:checked {
+        background-color: transparent;
+    }
+}

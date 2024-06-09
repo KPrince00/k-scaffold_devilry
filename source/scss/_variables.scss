@@ -3,6 +3,12 @@
 @mixin all {
   @include k.variables;
   // Customize your variables here
+  --bodyColor: rgb(219, 84, 43);
+  --mindColor: rgb(79, 76, 238);
+  --spiritColor: rgb(247, 243, 22);
+  --fillLeftUnselectedColor: transparent;
+  --fontColor: black;
+  --borderColor: rgb(73, 73, 73);
 
 }
 

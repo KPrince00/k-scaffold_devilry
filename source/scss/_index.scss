@@ -1,6 +1,8 @@
 @use './variables';
 @use 'components/_nav.scss';
-@use 'components/_header.scss';
+@use 'components/_statheader.scss';
+@use 'components/_fillleft.scss';
+@use 'components/_attributes.scss';
 
 @mixin variables{
   @include variables.all;

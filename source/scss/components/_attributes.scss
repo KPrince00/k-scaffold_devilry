@@ -1,0 +1,13 @@
+.attribute-view.attribute-view.attribute-view.attribute-view {
+    padding-top: 10px;
+    border-top: 2px solid white;
+    position: relative;
+    top: -10px;
+    display:grid;
+    gap:var(--half-gap);
+    grid-template-columns:repeat(3,33%);
+    width: 100%;
+    grid-auto-flow: column;
+    align-items: start;
+    justify-items: center;
+  }

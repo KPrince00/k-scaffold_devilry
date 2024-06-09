@@ -1,0 +1,20 @@
+mixin pipFill(name, affectsList, maxSize)
+    - var valuesArray = [];
+    - var i = 0;
+    while i < maxSize 
+        - valuesArray[i] = i + 1;
+        - i = i + 1;
+    .attribute-container 
+        h5 #{name}
+        +fillLeft({
+            radioObj:{name:name},
+            divObj:{class:'attribute-fill'},
+            valueArray:valuesArray,
+            trigger:{affects:`${affectsList}`},
+            noClear:false
+        })
+
++scss.
+    .attribute-container {
+        justify-items: center;
+    }

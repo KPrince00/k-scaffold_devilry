@@ -1,7 +1,4 @@
-.attribute-view.attribute-view.attribute-view.attribute-view {
-    padding-top: 10px;
-    position: relative;
-    top: -10px;
+.attribute-view.attribute-view.attribute-view {
     display:grid;
     gap:var(--half-gap);
     grid-template-columns:repeat(3,33%);
@@ -9,6 +6,10 @@
     grid-auto-flow: column;
     align-items: start;
     justify-items: center;
+    box-sizing: border-box;
+    padding-top: 10px;
+    position: relative;
+    top: -10px;
 
     .fill-left__radio[name="attr_body"] {
       background-color:var(--bodyColor);

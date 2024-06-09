@@ -1,0 +1,23 @@
+include k-scaffold
+include ./components/_index.pug
+include ./sections/_index.pug
+- const templateName = 'Devilry_(V1)';
+//- Stores the sheet version number for use with version control functions
++hidden({name:'sheet version',value:0})
+//- Now, for our actual sheet. We'll wrap this in a main element and give it an ID of main.
+main#main-nav
+  +tabs({name:'devilry',defaultActiveTab:'statistics'})
+    +tab({name:'statistics',container:'article',button:{content:'Stats &nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'},active:true})
+      include ./views/_abilities.pug
+    +tab({name:'info',container:'article',button:{content:'Info &nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'}})
+      include ./views/_index.pug
+    +tab({name:'domains',container:'article',button:{content:'Domains &nbsp;&nbsp;'},trigger:{listenerFunc:'navigateSheet'}})
+      include ./views/_index.pug
+    +tab({name:'settings',button:{content:'Settings &nbsp;&nbsp;'},container:'article',trigger:{listenerFunc:'navigateSheet'}})
+      include ./views/_index.pug
+//- An input to contain template fields that should always be output with a roll.
++hidden({name:'template start',value:`@{whisper}&{template:${templateName}} {{character_name=@{character_name}}} {{character_id=@{character_id}}}`})
+include rolltemplate/_index.pug
++kscript('Devilry_(V1)')
+  //- All additional javascript files should be included in the index file
+  include ./javascript/_index.pug

@@ -1,0 +1,54 @@
+.tabs__header{
+	position:sticky;
+	top:0;
+	background-color:var(--backColor);
+	z-index:9999;
+	margin-bottom:0px;
+}
+#main-nav{
+  display:flex;
+  flex-wrap:wrap;
+  align-items: center;
+  gap: var(--tiny-gap);
+  position:sticky;
+  top:40px;
+  background-color:var(--backColor);
+  padding:var(--tiny-gap) 0 0;
+	margin-bottom:var(--big-gap);
+  border-bottom:1px solid #dddddd;
+	z-index:999;
+	box-shadow:30px 0 var(--backColor),-30px 0 var(--backColor);
+  color:var(--fontColor);
+}
+.tabs--devilry__button.tabs--devilry__button.tabs--devilry__button.tabs--devilry__button{
+    color: var(--fontColor);
+    font-style:normal;
+    border:2px solid transparent;
+    margin:0 0 -1px;
+    background-color:var(--backColor);
+    border-radius:4px 4px 0 0;
+    box-shadow:none;
+    font-size:13px;
+    background-image:none;
+    padding:9px 12px;
+    height:16px;
+    &:not(.k-active-tab):hover{
+        background-color:#eeeeee; //eeeeee //dddddd
+        --fontColor:black;
+        color:black;
+    }
+    &.k-active-tab{
+        border-color: #dddddd #dddddd var(--backColor) #dddddd;
+        color: palevioletred
+    }
+    &.inactive{
+        display:none !important;
+    }
+}
+.tabs__button.tabs--devilry__button.material-icons {
+    color: red;
+}
+.tabs__nav-item {
+    margin-left: 0px;
+    margin-right: 0px;
+}

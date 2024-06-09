@@ -1,0 +1,25 @@
+// ./scss/_general.scss
+@use 'k-scaffold' as k;
+@use './variables';
+@use './components';
+@use './sections';
+
+html {
+  font-size: 16px;
+}
+body {
+  @include variables.all;
+  font-size: 1rem;
+  .ui-dialog {
+    .tab-content {
+      .charsheet {
+        @include k.defaultStyles;
+        @include components.all;
+        @include sections.all;
+      }
+    }
+  }
+  &.sheet-darkmode{
+    @include variables.dark;
+  }
+}

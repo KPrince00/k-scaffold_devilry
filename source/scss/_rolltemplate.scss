@@ -1,0 +1,11 @@
+// ./scss/_rolltemplate.scss
+@use 'k-scaffold' as k;
+@use './variables';
+@use './components';
+// Change rolltemplate class name to match project's rolltemplate.
+.sheet-rolltemplate-project-name{
+  @include variables.all;
+  @include k.defaultRollStyling;
+  @include components.all;
+  // Additional styling as needed here.
+}

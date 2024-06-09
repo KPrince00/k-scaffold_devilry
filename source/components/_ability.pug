@@ -1,0 +1,31 @@
+//- components/_ability.pug
+mixin ability(name)
+  .ability-container
+    +roller({name,role:'heading',class:'ability-button','aria-level':3,'data-i18n':name,trigger:{triggeredFuncs:'rollAbilityCheck'}}).ability-header
+    .ability-scoreaaaa
+      +number({name,class:'underlined ability-score',trigger:{affects:[`${name}_mod`]}})
+      +span({name:`${name} mod`,class:'abilty-mod',trigger:{affects:[`${name}_save`],calculation:'calcMod'}})
+    .save-container
+      +roller({name:`${name} save`,class:'ability-save-button'})
+      +span({name:`${name} save`,class:'ability-save',trigger:{calculation:'calcSave'}})
++module.
+  const calcMod = ({trigger,attributes}) => {
+    const base = trigger.name.replace(/_mod/,'');
+    return Math.floor((attributes[base] - 10) / 2);
+  };
+  const calcSave = ({trigger,attributes}) => {
+    const mod = trigger.name.replace(/save/,'mod');
+    return mod + attributes.proficiency;
+  };
+  k.registerFuncs({calcMod,calcSave});
++scss.
+  .ability-container{
+    display: flex;
+    gap: var(--half-gap);
+    .ability-score,
+    .save-container{
+      display:flex;
+      flex-direction: column;
+      gap: var(--tiny-gap);
+    }
+  }

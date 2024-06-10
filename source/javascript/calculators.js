@@ -14,8 +14,8 @@ const calcFromAdditive = function({trigger,attributes,additiveList}) {
         k.debug("got " + attr + " with value " + value);
         result = result + value;
     }
-    k.debug("now returning " + (result+1));
-    return result+1;
+    k.debug("now returning " + (result));
+    return result;
   };
 
 const calcNewValue = function({trigger,attributes}) {

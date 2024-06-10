@@ -3,9 +3,9 @@ include ./_pipFill.pug
 .attribute-view
   -
     const attributeArray = [
-        {attribute: 'body', affectsList: ['speed']},
-        {attribute: 'mind', affectsList: ['speed','willpower']},
-        {attribute: 'spirit', affectsList: ['willpower']},
+        {attribute: 'body', affectsList: ['underline-speed']},
+        {attribute: 'mind', affectsList: ['underline-speed','underline-willpower']},
+        {attribute: 'spirit', affectsList: ['underline-willpower']},
     ];
   each attr in attributeArray
-    +pipFill(attr.attribute, attr.affectsList, 5, null)
+    +pipFill(attr.attribute, attr.affectsList, 5, null, false)

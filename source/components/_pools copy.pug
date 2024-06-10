@@ -6,4 +6,4 @@ include ./_pipFill.pug
             {pool: 'willpower', additivePool: `mind,spirit`},
         ];
     each pool in poolsArray
-        +pipFill(pool.pool, '[]', 10, pool.additivePool, true)
+        +pipFill(pool.pool, '[]', 10, pool.additivePool)

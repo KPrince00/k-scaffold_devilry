@@ -11,7 +11,38 @@
     box-sizing: border-box;
 
     .pips-container {
+        .disable-checkbox.disable-checkbox.disable-checkbox.disable-checkbox {
+            background:transparent;
+            position:relative;
+            z-index:1;
+            top:-0.9em;
+            left:0;
+            display: flex;
+            .fill-left__radio {
+                background-color: transparent;
+                margin-right: 0.25rem;
+                border: 2px solid transparent;
+                height: 1em;
+                width: 1em;
+                margin-right: 0.20rem;
+            }
+
+            .fill-left__radio {
+                border-bottom: 2px solid transparent;
+            }
+
+            .fill-left__radio[name="attr_underline-speed"]:checked {
+                border-bottom: 2px solid var(--speedColor);
+            }
+
+            .fill-left__radio[name="attr_underline-willpower"]:checked {
+                border-bottom: 2px solid var(--willpowerColor);
+            }
+        }
+
         .fill-left {
+            z-index:3;
+            position: relative;
             .fill-left__radio {
                 height: 1em;
                 width: 1em;

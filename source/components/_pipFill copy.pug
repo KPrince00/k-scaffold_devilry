@@ -1,4 +1,4 @@
-mixin pipFill(name, affectsList, maxSize, pFormula, disable)
+mixin pipFill(name, affectsList, maxSize, pFormula)
     - var valuesArray = [];
     - var i = 0;
     while i < maxSize 
@@ -9,12 +9,6 @@ mixin pipFill(name, affectsList, maxSize, pFormula, disable)
         +fillLeft({
             radioObj:{name:name,trigger:{affects:affectsList,calculation:'calcNewValue',formula:pFormula}},
             divObj:{class:'pip-fill'},
-            valueArray:valuesArray,
-            noClear:false
-        })
-        +fillLeft({
-            radioObj:{name:`underline-${name}`,trigger:{affects:affectsList,calculation:'calcNewValue',formula:pFormula}},
-            divObj:{class:'pip-fill disable-checkbox'},
             valueArray:valuesArray,
             noClear:false
         })

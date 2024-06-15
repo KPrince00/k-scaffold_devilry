@@ -1,7 +1,41 @@
 include ./_pipFill.pug
 .footer-humanity
     +pipFill('humanity',null,10,null,false)
+    +input-label({
+        label:'Homogenize &nbsp;&nbsp;',
+        inputObj:{name:'homog-bonus',type:'number'},
+        spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
+    })
+    +input-label({
+        label:'Mortal Penalty &nbsp;&nbsp;',
+        inputObj:{name:'mortal-pen',type:'number'},
+        spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
+    })
 +scss.
     .footer-humanity {
         grid-column-start: span 2;
+        .fill-left__radio {
+            background-color: var(--humanityColor);
+            margin-right: 0.22rem;
+            border: 2px solid #eee;
+            height: 1.8em;
+            width: 1.8em;
+        }
+
+        .pips-container {
+            margin-bottom: 0.6em;
+        }
+
+        .input-label {
+            width: 49%;
+        }
+
+        .input-label__input {
+            color: var(--fontColor);
+            border: 2px dashed var(--borderColor);
+            width: 2em;
+            text-align: center;
+            align-self: right;
+            flex: 0 0 0;
+        }
     }

@@ -1,3 +1,14 @@
 include ./_pipFill.pug
 .footer-hunger
     +pipFill('hunger',null,5,null,false)
+
++scss.
+    .footer-hunger {
+        .fill-left__radio {
+            background-color: var(--hungerColor);
+            margin-right: 0.22rem;
+            border: 2px solid #eee;
+            height: 1.8em;
+            width: 1.8em;
+        }
+    }

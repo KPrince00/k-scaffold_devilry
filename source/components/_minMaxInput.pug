@@ -1,0 +1,23 @@
+mixin minMaxInput(labelDisplay, name) 
+    label(class='input-label min-max-label')
+        +span({class:'input-label__text min-max-label',role:'heading',"aria-level":5})
+            |#{labelDisplay}
+        .input-section
+            +input({class:'input-label__input min-max-left',name:`${name}-current)`,type:'number'})
+            h4 /
+            +input({class:'input-label__input min-max-right',name:`${name}-max)`,type:'number'})
++scss.
+    .min-max-label.min-max-label.min-max-label {
+        .input-section {
+            display: inline-flex;
+            .input-label__input {
+                width: 1.7em;
+            }
+            .min-max-right {
+                margin-left: 2px;
+            }
+            .min-max-left {
+                margin-right: 2px;
+            }
+        }
+    }

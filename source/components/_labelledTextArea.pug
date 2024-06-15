@@ -1,13 +1,13 @@
 mixin labeledAdaptiveText(attributeName, displayName, sectionClass) 
     section(class=`labeled-adaptive labeled-adaptive-${attributeName} ${sectionClass}`)
-        +adaptiveTextarea({
+        +textarea({
             name:attributeName,
         })
         h5 #{displayName}
 
 mixin labeledAdaptiveTextWithToggle(attributeName, displayName, sectionClass) 
     section(class=`labeled-adaptive labeled-adaptive-${attributeName} ${sectionClass}`)
-        +adaptiveTextarea({
+        +textarea({
             name:attributeName,
         })
         section(class=`labeled-adaptive__section labeled-adaptive-${attributeName}-toggle`)

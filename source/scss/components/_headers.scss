@@ -1,6 +1,6 @@
 //This file will define how our header section is laid out.
 @use '_mixinsandplaceholders';
-#character-header{
+#character-header,#info-header{
   padding-top: 5px;
   border-top: 2px solid white;
   position: relative;
@@ -12,12 +12,17 @@
   grid-auto-flow: column;
   align-items: start;
   justify-items: center;
-  .character-details{
+  .character-details,.info-header-details{
     display:grid;
     grid-template-columns:repeat(15,2em);
     gap:var(--half-gap);
     > :not(:is(.span-2,.span-all)){
       justify-self:end;
+    }
+  }
+  .info-header-details {
+    input {
+      text-align: center;
     }
   }
   label.input-label { 

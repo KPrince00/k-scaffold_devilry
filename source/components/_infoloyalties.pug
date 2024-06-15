@@ -1,0 +1,24 @@
+section.info-loyalties.info-row
+    +labeledAdaptiveText('item','Iconic Item','')
+    +labeledAdaptiveText('allies','Allies & Organizations','span-14')
++scss.
+     .info-loyalties {
+        display:grid;
+        gap:var(--half-gap);
+        grid-template-columns:repeat(20, 1fr);
+        grid-auto-flow: column;
+        align-items: start;
+        justify-items: center;
+        box-sizing: border-box;
+        position: relative;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+
+        section {
+            grid-column-start: span 6;
+        }
+
+        section.span-14 {
+            grid-column-start: span 14;
+        }
+     }

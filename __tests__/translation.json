@@ -1,6 +1,7 @@
 {
   "&nbsp;": "&nbsp;",
   "ability name": "ability name",
+  "Age (Apparent/Actual)": "Age (Apparent/Actual)",
   "archetype abilities": "archetype abilities",
   "Bane": "Bane",
   "Block": "Block",
@@ -18,12 +19,16 @@
   "Endure": "Endure",
   "Etiquette": "Etiquette",
   "Experience Points": "Experience Points",
+  "Eyes": "Eyes",
   "Fear Rating": "Fear Rating",
   "Firearm*": "Firearm*",
   "First aid": "First aid",
+  "Hair": "Hair",
+  "Height": "Height",
   "History": "History",
   "Homogenize &nbsp;&nbsp;": "Homogenize &nbsp;&nbsp;",
   "HP Max": "HP Max",
+  "info header": "info header",
   "Insight": "Insight",
   "Intimidate": "Intimidate",
   "Invest": "Invest",
@@ -45,6 +50,7 @@
   "Run": "Run",
   "Security": "Security",
   "Severity": "Severity",
+  "Skin": "Skin",
   "Sneak": "Sneak",
   "Species and Name": "Species and Name",
   "Streetwise": "Streetwise",
@@ -54,5 +60,6 @@
   "Swim": "Swim",
   "Throw": "Throw",
   "Track": "Track",
-  "Weapon*": "Weapon*"
+  "Weapon*": "Weapon*",
+  "Weight": "Weight"
 }

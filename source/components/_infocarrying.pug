@@ -1,0 +1,26 @@
+section.info-carrying.info-row
+    +labeledAdaptiveText('backstory','Character Backstory','')
+    +labeledAdaptiveText('contracts','Contracts or Curses','')
+    +labeledAdaptiveText('inventory','Inventory','span-8')
++scss.
+     .info-carrying {
+        display:grid;
+        gap:var(--half-gap);
+        grid-template-columns:repeat(20, 1fr);
+        grid-auto-flow: column;
+        align-items: start;
+        justify-items: center;
+        box-sizing: border-box;
+        position: relative;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+
+        section.labeled-adaptive {
+            grid-column-start: span 6;
+            height: var(--infoPageLargeHeight);
+        }
+
+        section.span-8 {
+            grid-column-start: span 8;
+        }
+     }

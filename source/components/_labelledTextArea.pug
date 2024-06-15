@@ -1,0 +1,34 @@
+mixin labeledAdaptiveText(attributeName, displayName, sectionClass) 
+    section(class=`labeled-adaptive labeled-adaptive-${attributeName} ${sectionClass}`)
+        +adaptiveTextarea({
+            name:attributeName,
+        })
+        h5 #{displayName}
+
+mixin labeledAdaptiveTextWithToggle(attributeName, displayName, sectionClass) 
+    section(class=`labeled-adaptive labeled-adaptive-${attributeName} ${sectionClass}`)
+        +adaptiveTextarea({
+            name:attributeName,
+        })
+        section(class=`labeled-adaptive__section labeled-adaptive-${attributeName}-toggle`)
+            h5 #{displayName}
+            +checkbox({name:attributeName +'-toggle',class:'labeled-adaptive-toggle__checkbox '+ attributeName + '-toggle',value:1})
+
++scss.
+    div.adaptive {
+        height: 100%;
+    }
+
+    .labeled-adaptive__section {
+        display: flex;
+        h5 {
+            width: 100%;
+        }
+        input.labeled-adaptive-toggle__checkbox {
+            position: absolute;
+            width: 3%;
+            border: 1px solid var(--borderColor);
+            right: 0px;
+            height: 0.7em;
+        }
+    }

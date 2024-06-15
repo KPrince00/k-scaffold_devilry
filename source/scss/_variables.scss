@@ -17,6 +17,9 @@
   --fontColor: black;
   --borderColor: rgb(73, 73, 73);
 
+  --infoPageDefaultHeight: 6em;
+  --infoPageLargeHeight: calc(var(--infoPageDefaultHeight) * 1.8);
+
 }
 
 @mixin dark {

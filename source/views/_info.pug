@@ -1,0 +1,69 @@
+article#info.info-header 
+    include ../components/_infoheader.pug
+    section#info-details.info-details
+        section#info-various.info-various
+            include ../components/_infoholdings.pug
+            include ../components/_infoloyalties.pug
+            include ../components/_infocarrying.pug
+        section#info-characteristics.info-characteristics
+            include ../components/_infotraits.pug
+        
+
++scss.
+    .info-details {
+        display:grid;
+        gap:var(--half-gap);
+        grid-template-columns:repeat(4, 1fr);
+        grid-auto-flow: column;
+        align-items: start;
+        justify-items: center;
+        box-sizing: border-box;
+        position: relative;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+
+        .info-various {
+            grid-column-start: span 3;
+            width: 100%;
+        }
+
+        .info-row {
+            padding-bottom: 5px;
+        }
+
+        .info-carrying {
+            padding-bottom: 0px;
+        }
+
+
+
+        input {
+            width: 100%;
+        }
+
+        .labeled-adaptive { 
+            font-family: 'Times New Roman';
+            min-width: 0 !important;
+            width: 100%;
+            display: inline-flex;
+            flex-direction: column;
+            height: var(--infoPageDefaultHeight);
+            textarea {
+                font-size: small;
+                justify-content: start;
+                text-align: left;
+                width: 100%;
+                color: var(--fontColor);
+                border: 2px dashed var(--borderColor);
+                border-radius: 2px;
+            }
+            
+            h5 {
+                font-size:small;
+            }
+        }
+    }
+    .info-characteristics {
+        width: 100%;
+        height: 100%;
+    }

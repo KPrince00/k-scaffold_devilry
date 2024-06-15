@@ -1,6 +1,6 @@
 @use './variables';
 @use 'components/_nav.scss';
-@use 'components/_statheader.scss';
+@use 'components/_headers.scss';
 @use 'components/_fillleft.scss';
 @use 'components/_attributes.scss';
 @use 'components/_pools.scss';
@@ -20,6 +20,7 @@
   color: black;
   box-sizing:border-box !important;
   background-color: var(--dm-backColor);
+  height: 0px;
 }
 @mixin roll{
   @include generic;

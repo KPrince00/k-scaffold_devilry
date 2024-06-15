@@ -1,0 +1,62 @@
+.hp-section
+    +input-label({
+        label:'HP Max',
+        inputObj:{name:'hp-max',type:'number'},
+        spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
+    })
+    +input-label({
+        label:'Current HP',
+        inputObj:{name:'hp-curr',type:'number'},
+        spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
+    })
+    +input-label({
+        label:'Hit Die',
+        inputObj:{class:"double-input di-right",name:'hit-die-max',type:'number'},
+        spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
+    })
+    +input-label({
+        label:'Regenerate',
+        inputObj:{name:'regen',type:'text'},
+        spanObj:{role:'heading','aria-level':5,class:'big-leftLabel'}
+    })
+    +input({class:"double-input di-left", name:'hit-die-current',type:'text'})
+    h4 /
++scss.
+    .hp-section.hp-section.hp-section {
+        width: 100%;
+        min-width: 0;
+        .input-label.input-label.input-label {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        input {
+                    color: var(--fontColor);
+                    border: 2px dashed var(--borderColor);
+                    width: 4em;
+                    text-align: center;
+                    align-self: right;
+                    flex: 0 0 0;
+                }
+
+        .double-input.double-input {
+            width: 1.5em;
+            z-index: 3;
+        }
+
+        .di-left {
+            padding: 2px;
+            position: relative;
+            line-height: normal;
+            top: -3.25em;
+            left: 9em;
+        }
+
+        h4 {
+            position: relative;
+            line-height: normal;
+            top: -3.25em;
+            left: 3em;
+        }
+    }

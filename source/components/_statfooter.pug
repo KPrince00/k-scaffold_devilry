@@ -1,0 +1,17 @@
+.character-footer
+    include ./_statsHp.pug
+    include ./_statsHumanity.pug
+    include ./_statsHunger.pug
+
++scss.
+    .character-footer {
+        display:grid;
+        grid-template-columns:repeat(4,25%);
+        width: 100%;
+        grid-auto-flow: column;
+        align-items: start;
+        justify-items: center;
+        box-sizing: border-box;
+        position: relative;
+    }
+

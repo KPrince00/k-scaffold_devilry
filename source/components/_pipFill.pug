@@ -7,7 +7,7 @@ mixin pipFill(name, affectsList, maxSize, pFormula, disable)
     .pips-container 
         h5 #{name}
         +fillLeft({
-            radioObj:{name:name,trigger:{affects:affectsList,calculation:'calcNewValue',formula:pFormula}},
+            radioObj:{name:name,value:1,trigger:{affects:affectsList,calculation:'calcNewValue',formula:pFormula}},
             divObj:{class:'pip-fill'},
             valueArray:valuesArray,
             noClear:false

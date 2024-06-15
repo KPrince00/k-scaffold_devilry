@@ -1,0 +1,7 @@
+mixin specific-label(labelName)
+    - var focusName = labelName.split('S-')[1]
+    +input-label({
+        label:focusName.charAt(0).toUpperCase() + focusName.slice(1) + "*",
+        inputObj:{name:focusName,type:'number'}
+    })
+    //TODO: Hover-over pop-up for adding specific ones?

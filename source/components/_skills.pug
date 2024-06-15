@@ -1,0 +1,47 @@
+//- components/_skulls.pug
+include ./_broadSkillsSection.pug
+.skills-categories-view
+  -
+    const skillsArray = [
+        {
+            parent: 'body', broadList: [
+                {broad: 'athletics', focusList: ['run','swim','throw','climb']},
+                {broad: 'combat', focusList: ['S-weapon','brawl','block','d']},
+                {broad: 'acrobatics', focusList: ['jump','dodge','stunt','d']},
+                {broad: 'dexterity', focusList: ['S-pilot','sneak','deft','d']}
+            ]
+        },
+        {
+            parent: 'mind', broadList: [
+                {broad: 'reason', focusList: ['S-firearm','navigation','survival','d']},
+                {broad: 'know', focusList: ['nature','history','occult','invest']},
+                {broad: 'tech', focusList: ['coding','security','repair','d']},
+                {broad: 'medicine', focusList: ['surgery','first aid','diagnosis','d']}
+            ]
+        },
+        {
+            parent: 'spirit', broadList: [
+                {broad: 'perception', focusList: ['notice','track','insight','d']},
+                {broad: 'resolve', focusList: ['leadership','intimidate','endure','d']},
+                {broad: 'personal', focusList: ['etiquette','streetwise','politics','d']},
+                {broad: 'charm', focusList: ['perform','persuade','decieve','d']}
+            ]
+        }
+    ];
+  each skillCategory in skillsArray
+    +broadSkillsSection(skillCategory)
++scss.
+    .skills-categories-view{
+        display:grid;
+        gap:var(--grid-gap);
+        grid-template-columns:repeat(3,33%);
+        width: 100%;
+        grid-auto-flow: column;
+        align-items: start;
+        justify-items: center;
+        box-sizing: border-box;
+        padding-top: 10px;
+        position: relative;
+        margin-left: 1px;
+        margin-right: 1px;
+    }

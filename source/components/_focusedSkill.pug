@@ -1,0 +1,81 @@
+include ./_pipFill.pug
+include ./_specific-label.pug
+mixin focusedSkill(focusedSkillCategory)
+    +div({class: `focused-skills focused-skills-${focusedSkillCategory.broad}`})
+        +pipFill(focusedSkillCategory.broad, null, 2, null, false)
+        each focus in focusedSkillCategory.focusList
+            if focus != 'd'
+                if focus.includes("S-")
+                    +specific-label(focus)
+                else
+                    +input-label({
+                        label:focus.charAt(0).toUpperCase() + focus.slice(1),
+                        inputObj:{name:focus,type:'number'}
+                    })
+            else 
+                +input-label({
+                        label:'&nbsp;',
+                        inputObj:{disabled:true,name:'',type:'number'}
+                    })
+            
+
++scss.
+    .focused-skills{
+        position:relative;
+        width: 100%;
+        border-left: 1px solid var(--fontColor);
+        border-right: 1px solid var(--fontColor);
+
+        .pips-container {
+            width: 100%;
+            h5 {
+                font-size: 12px;
+            }
+            .fill-left {
+                .fill-left__radio {
+                    height: 0.8em;
+                    width: 0.8em;
+                    margin-right: 0.15rem;
+                }
+            }
+            padding-bottom: 2px;
+            border-bottom: 1px solid var(--borderColor);
+        }
+
+        
+
+        .input-label {
+            width: 100%;
+            font-size: 14px;
+            color: var(--textColor);
+            padding-top: 1px;
+            padding-bottom: 1px;
+            input {
+                border: 1px dashed var(--borderColor);
+            }
+            input:disabled {
+                border: 0px dashed var(--borderColor);
+            }
+        }
+    }
+
+    .focused-skills-athletics {
+        border-left: 0px;
+    }
+    .focused-skills-dexterity {
+        border-right: 0px;
+    }
+
+    .focused-skills-reason {
+        border-left: 0px;
+    }
+    .focused-skills-medicine {
+        border-right: 0px;
+    }
+
+    .focused-skills-perception {
+        border-left: 0px;
+    }
+    .focused-skills-persuade {
+        border-right: 0px;
+    }

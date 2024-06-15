@@ -1,9 +1,0 @@
-include ./_pipFill.pug
-.pools-view 
-    -
-        const poolsArray = [
-            {pool: 'speed', additivePool: `body,mind`},
-            {pool: 'willpower', additivePool: `mind,spirit`},
-        ];
-    each pool in poolsArray
-        +pipFill(pool.pool, '[]', 10, pool.additivePool)

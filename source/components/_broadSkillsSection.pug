@@ -1,0 +1,41 @@
+include ./_focusedSkill.pug
+mixin broadSkillsSection(skillCategory)
+    +div({class: `broad-skills broad-skills-${skillCategory.parent}`})
+        each broadSkill in skillCategory.broadList
+            +focusedSkill(broadSkill)
+
++scss.
+    .broad-skills{
+        display:grid;
+        gap:0;
+        grid-template-columns:repeat(4,25%);
+        width: 100%;
+        grid-auto-flow: column;
+        align-items: start;
+        justify-items: center;
+        box-sizing: border-box;
+        position: relative;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .broad-skills-body {
+        border: 2px solid var(--bodyColor);
+        .fill-left__radio {
+            background-color:var(--bodyColorSecondary);
+        }
+    }
+
+    .broad-skills-mind {
+        border: 2px solid var(--mindColor);
+        .fill-left__radio {
+            background-color:var(--mindColorSecondary);
+        }
+    }
+
+    .broad-skills-spirit {
+        border: 2px solid var(--spiritColor);
+        .fill-left__radio {
+            background-color:var(--spiritColorSecondary);
+        }
+    }

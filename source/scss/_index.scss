@@ -17,9 +17,9 @@
 @mixin sheet{
   @include generic;
   // Put your generic sheet styling here
-  top:-50px;
   color: black;
   box-sizing:border-box !important;
+  background-color: var(--dm-backColor);
 }
 @mixin roll{
   @include generic;

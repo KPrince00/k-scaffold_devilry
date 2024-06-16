@@ -7,38 +7,29 @@ header(data-i18n-aria-label='info header')#info-header.header.span-all
     })
     section.info-header-details
         +input-label({
-            label:'Age (Apparent/Actual)',
-            inputObj:{name:'age',class:'littlein',type:'text'},
+            label:'Fear Name',
+            inputObj:{name:'fear',class:'bigin domains',type:'text'},
             divObj:{class:'span-5'},
-            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+            spanObj:{role:'heading','aria-level':5,class:'bigin'}
         })
         +input-label({
-            label:'Height',
-            inputObj:{name:'height',class:'littlein',type:'text'},
+            label:'Blood Point Maximum',
+            inputObj:{name:'blood-max',class:'bigin domains',type:'number'},
             divObj:{class:'span-5'},
-            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+            spanObj:{role:'heading','aria-level':5,class:'bigin'}
         })
         +input-label({
-            label:'Weight',
-            inputObj:{name:'weight',class:'littlein',type:'text'},
+            label:'Current Blood Points',
+            inputObj:{name:'blood-cur',class:'bigin domains',type:'number'},
             divObj:{class:'span-5'},
-            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+            spanObj:{role:'heading','aria-level':5,class:'bigin'}
         })
-        +input-label({
-            label:'Eyes',
-            inputObj:{name:'eyes',class:'littlein',type:'text'},
-            divObj:{class:'span-5'},
-            spanObj:{role:'heading','aria-level':5,class:'littlein'}
-        })
-        +input-label({
-            label:'Skin',
-            inputObj:{name:'skin',class:'littlein',type:'text'},
-            divObj:{class:'span-5'},
-            spanObj:{role:'heading','aria-level':5,class:'littlein'}
-        })
-        +input-label({
-            label:'Hair',
-            inputObj:{name:'hair',class:'littlein',type:'text'},
-            divObj:{class:'span-5'},
-            spanObj:{role:'heading','aria-level':5,class:'littlein'}
-        })
++scss.
+    input.domains.bigin {
+        padding-top: 0px !important;
+        border: 2px dashed red;
+        height: 100%;
+    }
+    .info-header-details {
+        height: 100%;
+    }

@@ -1,4 +1,4 @@
-include ./_domainCollapsedDetails.pug
+include ./_domainAbilityDetails.pug
 mixin domain(initialLabel, discriminator)
     section(class=`domain-section-${initialLabel}-${discriminator}`,aria-labelledby='domain-details')#domain.domain-details.repeating-container
         +text({name:initialLabel+discriminator+'name',class:'domain-header',value:initialLabel})
@@ -8,8 +8,8 @@ mixin domain(initialLabel, discriminator)
                 +collapse
                 +domainCollapsedDetails(initialLabel,discriminator)
                 .headed-textarea.description.expanded
-                    h5({'data-i18n':'description'})
-                    +adaptiveTextarea({name:'description',class:'underlined'})
+                    +domainExpandedDetails(initialLabel,discriminator)
+
 
 +scss.
     .repeating-controls-manual {
@@ -45,10 +45,15 @@ mixin domain(initialLabel, discriminator)
         .repitem {
             input.collapse {
                 right: 0px;
+                top: -2px;
                 z-index: 3;
                 color: var(--textColor);
             }
             .repcontrol_del {
+                z-index: 3;
+                position: relative;
+            }
+            .repcontrol_move {
                 z-index: 3;
                 position: relative;
             }

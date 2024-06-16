@@ -4,14 +4,20 @@ mixin domainCollapsedDetails(initialLabel, discriminator)
         span(name='bp-label',class='domain-details')
             | BP
         +text({name:'bp-cost',class:'domain-details',placeholder:'BP'})
+
+mixin domainExpandedDetails(initialLabel, discriminator)
+    section(class=`domain-expanded-details expanded-${initialLabel+discriminator}`)
         span(name='ap-label',class='domain-details')
             | AP
         +text({name:'ap-cost',class:'domain-details',placeholder:'AP'})
         +text({name:'rouse-check',class:'domain-details span-2',placeholder:'Rouse'})
         +text({name:'duration',class:'domain-details span-4',placeholder:'Duration'})
+        +text({name:'pool',class:'domain-details span-4',placeholder:'Pool'})
+        +text({name:'opp-pool',class:'domain-details span-4',placeholder:'Opposed Pool'})
+        +adaptiveTextarea({name:'description',class:'underlined'})
 
 +scss.
-    .domain-collapsed-details {
+    .domain-collapsed-details,.domain-expanded-details {
         display:grid;
         gap:0;
         grid-template-columns:repeat(8, 1fr);
@@ -22,6 +28,9 @@ mixin domainCollapsedDetails(initialLabel, discriminator)
             color: var(--accentFontColor)
         }
 
+        .adaptive {
+            grid-column-start: span 8;
+        }
         .span-6 {
             grid-column-start: span 6;
         }

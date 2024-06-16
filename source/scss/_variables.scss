@@ -3,6 +3,39 @@
 @mixin all {
   @include k.variables;
   // Customize your variables here
+  --tabBorderColor: rgb(148, 148, 148);
+  --bodyColor: rgb(219, 84, 43);
+  --mindColor: rgb(79, 76, 238);
+  --spiritColor: rgb(226, 212, 13);
+  --speedColor: rgb(149, 80, 141);
+  --willpowerColor: rgb(111, 204, 58);
+  --humanityColor: rgb(161, 211, 196);
+  --hungerColor: rgb(219, 43, 87);
+  --bodyColorSecondary: rgb(219, 114, 43);
+  --mindColorSecondary: rgb(79, 106, 238);
+  --spiritColorSecondary: rgb(247, 213, 22);
+  --bodyColorTertiary: rgb(145, 135, 135);
+  --mindColorTertiary: rgb(135, 135, 145);
+  --spiritColorTertiary: rgb(145, 145, 135);
+  --bloodRed: red;
+  --fillLeftUnselectedColor: transparent;
+  --fontColor: black;
+  --accentFontColor: rgb(53, 53, 53);
+  --tickBorderColor: rgb(53, 53, 53);
+  --checkContent: '✗';
+
+  --infoPageDefaultHeight: 7em;
+  --infoPageLargeHeight: calc(var(--infoPageDefaultHeight) * 1.8);
+
+}
+
+@mixin dark {
+  @include k.darkMode;
+  // Customize your darkmode variable states and styling here.
+  --fontColor: white;
+  --accentFontColor: rgb(204, 204, 204);
+  --borderColor: grey;
+  --tabBorderColor: white;
   --bodyColor: rgb(219, 84, 43);
   --mindColor: rgb(79, 76, 238);
   --spiritColor: rgb(247, 243, 22);
@@ -18,20 +51,9 @@
   --spiritColorTertiary: rgb(145, 145, 135);
   --bloodRed: red;
   --fillLeftUnselectedColor: transparent;
-  --fontColor: black;
-  --accentFontColor: rgb(53, 53, 53);
-  --borderColor: rgb(128, 128, 128);
+  --tickBorderColor: #eee;
   --checkContent: '✗';
 
   --infoPageDefaultHeight: 7em;
   --infoPageLargeHeight: calc(var(--infoPageDefaultHeight) * 1.8);
-
-}
-
-@mixin dark {
-  @include k.darkMode;
-  // Customize your darkmode variable states and styling here.
-  --fontColor: white;
-  --accentFontColor: rgb(204, 204, 204);
-  --borderColor: grey;
 }

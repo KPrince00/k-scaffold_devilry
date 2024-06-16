@@ -33,7 +33,7 @@
     padding:9px 12px;
     height:16px;
     &:not(.k-active-tab):hover{
-        background-color:#eeeeee; //eeeeee //dddddd
+        background-color:var(--tickBorderColor);
         --fontColor:black;
         color:black;
     }

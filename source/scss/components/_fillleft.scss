@@ -3,7 +3,7 @@
     .fill-left__radio {
         background-color: grey;
         margin-right: 0.25rem;
-        border: 2px solid #eee;
+        border: 2px solid var(--tickBorderColor);;
         height: 2em;
         width: 2em;
     }

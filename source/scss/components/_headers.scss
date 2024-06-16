@@ -2,7 +2,7 @@
 @use '_mixinsandplaceholders';
 #character-header,#info-header,#appearance-header{
   padding-top: 5px;
-  border-top: 2px solid white;
+  border-top: 2px solid var(--tabBorderColor);
   position: relative;
   top: -10px;
   display:grid;

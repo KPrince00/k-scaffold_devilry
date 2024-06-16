@@ -1,0 +1,55 @@
+include ../components/_appearanceInput.pug
+include ../components/_appearanceName.pug
+article.appearances
+    section.apperances-left.appearances-section
+        +appearanceInput('True Form')
+        +appearanceInput('Homogenized')
+    section.apperances-mid.appearances-section
+        +appearanceName()
+        +appearanceInput('General')
+    section.apperances-right.appearances-section
+        +appearanceInput('Apparel')
+        +appearanceInput('Notable Features')
++scss.
+    .appearances {
+        top: -10px;
+        position: relative;
+        border-top: 2px solid white;
+        padding-top: 5px;
+        display:grid;
+        gap:var(--normal-gap);
+        grid-template-columns:repeat(3, 1fr);
+        grid-auto-flow: column;
+        align-items: start;
+        justify-items: center;
+        box-sizing: border-box;
+        height: 80vh;
+
+        input.bigin {
+            text-align: center;
+        }
+
+        .appearances-section {
+            width: 100%;
+            height: 100%;
+        }
+
+        textarea {
+                font-size: small;
+                justify-content: start;
+                text-align: left;
+                width: 100%;
+                height: 100%;
+                color: var(--fontColor);
+                border: 2px solid var(--borderColor);
+                border-radius: 2px;
+                resize: none;
+                scrollbar-width: none;
+            }
+
+        .apperances-mid {
+            .labelled-input {
+                height: 90%;
+            }
+        }
+    }

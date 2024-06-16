@@ -1,0 +1,16 @@
+mixin appearanceInput(defaultText)
+    section(class=`labelled-input labeled-input-${defaultText}`)
+        +textarea({
+            name:defaultText,
+            class:'appearances-input'
+        })
+        h5 #{defaultText}
+
++scss.
+    .labelled-input {
+        height: 50%;
+        box-sizing: border-box;
+        textarea.appearances-input {
+            height: 85%;
+        }
+    }

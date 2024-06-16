@@ -1,0 +1,8 @@
+mixin appearanceName()
+    header(data-i18n-aria-label='appearance header')#appearance-header.header.span-all.appearance-header
+        +input-label({
+            label:'Character Name',
+            inputObj:{name:'character name',class:'underlined bigin',type:'text'},
+            divObj:{class:'span-all'},
+            spanObj:{role:'heading','aria-level':5,class:'bigin'}
+        })

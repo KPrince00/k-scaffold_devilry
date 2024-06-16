@@ -1,0 +1,56 @@
+include ./_domainCollapsedDetails.pug
+mixin domain(initialLabel, discriminator)
+    section(class=`domain-section-${initialLabel}-${discriminator}`,aria-labelledby='domain-details')#domain.domain-details.repeating-container
+        +text({name:initialLabel+discriminator+'name',class:'domain-header',value:initialLabel})
+        +number({name:initialLabel+discriminator+'level',class:'domain-level'})
+        section(class='repeating-controls-manual')
+            +customControlFieldset({name:initialLabel+discriminator})
+                +collapse
+                +domainCollapsedDetails(initialLabel,discriminator)
+                .headed-textarea.description.expanded
+                    h5({'data-i18n':'description'})
+                    +adaptiveTextarea({name:'description',class:'underlined'})
+
++scss.
+    .repeating-controls-manual {
+        position: relative;
+        top: 0px;
+    }
+    .domain-header {
+        font-size: medium;
+        border: 2px solid var(--borderColor);
+        height: 2em;
+        text-align: center;
+    }
+
+    input.domain-level {
+        position: absolute;
+        font-size: medium;
+        border: 1px solid var(--borderColor);
+        height: 1.5em;
+        width: 1.5em;
+        right: 3px;
+        top: 4px;
+        text-align: center;
+    }
+
+    .repcontrol{
+        .repcontrol_edit {
+            font-size: small;
+        }
+    }
+
+    .repcontainer {
+        gap: var(--tiny-gap);
+        .repitem {
+            input.collapse {
+                right: 0px;
+                z-index: 3;
+                color: var(--textColor);
+            }
+            .repcontrol_del {
+                z-index: 3;
+                position: relative;
+            }
+        }
+    }

@@ -1,0 +1,35 @@
+mixin domainCollapsedDetails(initialLabel, discriminator)
+    section(class=`domain-collapsed-details collapsed-${initialLabel+discriminator}`)
+        +text({name:'name',class:'domain-details span-6',placeholder:'Name'})
+        span(name='bp-label',class='domain-details')
+            | BP
+        +text({name:'bp-cost',class:'domain-details',placeholder:'BP'})
+        span(name='ap-label',class='domain-details')
+            | AP
+        +text({name:'ap-cost',class:'domain-details',placeholder:'AP'})
+        +text({name:'rouse-check',class:'domain-details span-2',placeholder:'Rouse'})
+        +text({name:'duration',class:'domain-details span-4',placeholder:'Duration'})
+
++scss.
+    .domain-collapsed-details {
+        display:grid;
+        gap:0;
+        grid-template-columns:repeat(8, 1fr);
+        box-sizing: border-box;
+        span {
+            padding-left: 5px;
+            align-content: center;
+            color: var(--accentFontColor)
+        }
+
+        .span-6 {
+            grid-column-start: span 6;
+        }
+        .span-4 {
+            grid-column-start: span 4;
+        }
+        .span-2 {
+            grid-column-start: span 2;
+        }
+
+    }

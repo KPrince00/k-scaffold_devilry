@@ -13,9 +13,13 @@
   --bodyColorSecondary: rgb(219, 114, 43);
   --mindColorSecondary: rgb(79, 106, 238);
   --spiritColorSecondary: rgb(247, 213, 22);
+  --bodyColorTertiary: rgb(145, 135, 135);
+  --mindColorTertiary: rgb(135, 135, 145);
+  --spiritColorTertiary: rgb(145, 145, 135);
   --fillLeftUnselectedColor: transparent;
   --fontColor: black;
-  --borderColor: rgb(73, 73, 73);
+  --accentFontColor: rgb(53, 53, 53);
+  --borderColor: rgb(128, 128, 128);
   --checkContent: '✗';
 
   --infoPageDefaultHeight: 7em;
@@ -27,5 +31,6 @@
   @include k.darkMode;
   // Customize your darkmode variable states and styling here.
   --fontColor: white;
+  --accentFontColor: rgb(204, 204, 204);
   --borderColor: grey;
 }

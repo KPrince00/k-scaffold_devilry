@@ -35,6 +35,13 @@ article#domains.domains-header
         overflow-x: clip;
         scrollbar-width: none;
         align-content: baseline;
+        .repeating-controls-manual {
+            .repcontrol-button--add {
+                position: relative;
+                top: -4px;
+                z-index: 3;
+            }
+        }
     }
 
     .Domain1,.Domain4{
@@ -50,25 +57,5 @@ article#domains.domains-header
     .Domain3,.Domain6{
         input {
             border: 1px solid var(--spiritColorTertiary);
-        }
-    }
-
-    .Domain-1,.Domain-2,.Domain-3 {
-        .repeating-controls-manual {
-            .repcontrol-button--add {
-                position: fixed;
-                top: 172px;
-                z-index: 3;
-            }
-        }
-    }
-
-    .Domain-4,.Domain-5,.Domain-6 {
-        .repeating-controls-manual {
-            .repcontrol-button--add {
-                position: fixed;
-                top: 396px;
-                z-index: 3;
-            }
         }
     }

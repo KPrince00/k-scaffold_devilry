@@ -555,10 +555,10 @@ kFuncs.debug = debug;
  * @param {attributesProxy} attributes - The attributes object that must have a value for the reporder for each section.
  * @param {object[]} sections - Object containing the IDs for the repeating sections, indexed by repeating section name.
  */
-const orderSections = function(attributes,sections){
+const orderSections = function(attributes,sections,casc){
   Object.keys(sections).forEach((section)=>{
     attributes.attributes[`_reporder_${section}`] = commaArray(attributes[`_reporder_${section}`]);
-    sections[section] = orderSection(attributes.attributes[`_reporder_${section}`],sections[section]);
+    sections[section] = orderSection(attributes.attributes[`_reporder_${section}`],sections[section],attributes,section,casc);
   });
 };
 kFuncs.orderSections = orderSections;
@@ -568,10 +568,26 @@ kFuncs.orderSections = orderSections;
  * @memberof Utilities
  * @param {string[]} repOrder - Array of IDs in the order they are in on the sheet.
  * @param {string[]} IDs - Array of IDs to be ordered. Aka the default ID Array passed to the getSectionIDs callback
+ * @param {AttributesProxy} [attributes] - The Kscaffold attributes object
+ * @param {string} [section] - the name of the section being ordered. If section and attributes are passed, will return an ordered array that does not include IDs for rows that do not exist.
+ * @param {object} [casc] - the object describing the default state of the sheet.
  * @returns {string[]} - The ordered id array
  */
-const orderSection = function(repOrder,IDs=[]){
-  const idArr = [...repOrder.filter(v => v),...IDs.filter(id => !repOrder.includes(id.toLowerCase()))];
+const orderSection = function(repOrder,IDs=[], attributes, section,casc){
+  const idArr = [...repOrder.filter(v => v),...IDs.filter(id => !repOrder.includes(id.toLowerCase()))]
+    .filter(id => {
+      const testAttr = Object.keys(casc).find(a => a.toLowerCase().startsWith(`attr_${section}_${id}`));
+      const testName = testAttr?.replace(/attr_/,'');
+      const idName = testName?.replace(/\$x/,id);
+      return (!section && !casc) ||
+        (
+          idName && 
+          (
+            attributes.attributes.hasOwnProperty(idName) ||
+            attributes.updates.hasOwnProperty(idName)
+          )
+        );
+    });
   return idArr;
 };
 kFuncs.orderSection = orderSection;
@@ -848,7 +864,7 @@ const createAttrProxy = function(attrs,sections,casc){
             retValue = obj.attributes[prop];
             break;
         }
-        let cascRef = `attr_${prop.replace(/(repeating_[^_]+_)[^_]+/,'$1\$X')}`;
+        let cascRef = `attr_${prop.replace(/(repeating_[^_]+_)[^_]+/,'$1\$X')}`.toLowerCase();
         let numRetVal = +retValue;
         if(!Number.isNaN(numRetVal) && retValue !== ''){
           retValue = numRetVal;
@@ -1112,6 +1128,7 @@ const expandCascade = function(cascade,sections){
     return memo;
   },{});
 };
+kFuncs.expandCascade = (sections) => expandCascade(cascades,sections);
 
 const expandRepeating = function(memo,key,cascade,sections){
   key.replace(/((?:attr|act)_)(repeating_[^_]+)_[^_]+?_(.+)/,(match,type,section,field)=>{
@@ -1261,7 +1278,7 @@ const getAllAttrs = function({props=baseGet,sectionDetails=repeatingSectionDetai
     getAttrs([...props,...repeats],(values)=>{
       const casc = expandCascade(cascades,sections);
       const attributes = createAttrProxy(values,sections,casc);
-      orderSections(attributes,sections);
+      orderSections(attributes,sections,casc);
       callback(attributes,sections,casc);
     })
   });

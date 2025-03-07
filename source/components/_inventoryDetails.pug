@@ -1,21 +1,29 @@
 mixin inventoryCollapsedDetails()
     section(class=`inventory-collapsed-details collapsed-item`)
-        +text({name:'name',class:'inventory-details span-6',placeholder:'Name'})
-        +text({name:'basedmg',class:'inventory-details span-2',placeholder:'DMG'})
-        +text({name:'attributes',class:'inventory-details span-6',placeholder:'Traits'})
-        span(name='bp-label',class='domain-details')
-            | TL
-        +text({name:'techniquelvl',class:'inventory-details',placeholder:'TL'})
+        +text({name:'name',class:'inventory-details span-4',placeholder:'Name'})
+        span(name='dmg-label',class='domain-details')
+            | ⚔
+        +text({name:'basedmg',class:'inventory-details span-1',placeholder:'DMG'})
+        span(name='pool-label',class='domain-details span-1')
+            | ★
+        +text({name:'pool',class:'inventory-details span-1',placeholder:'POOL'})
+        +text({name:'attributes',class:'inventory-details adaptive',placeholder:'Traits'})
+
 
 mixin inventoryExpandedDetails()
     section(class=`inventory-expanded-details expanded-item`)
-        span(name='bp-label',class='domain-details')
+        span(name='ca-label',class='domain-details')
             | Ca
-        +text({name:'capacity',class:'inventory-details',placeholder:'pacity'})
-        span(name='bp-label',class='domain-details')
+        +text({name:'capacity',class:'inventory-details span-1',placeholder:'pacity'})
+        span(name='mi-label',class='domain-details')
             | Mi
-        +text({name:'misfire',class:'inventory-details',placeholder:'sfire'})
-        +text({name:'cost',class:'inventory-details span-4',placeholder:'Cost'})
+        +text({name:'misfire',class:'inventory-details span-1',placeholder:'sfire'})
+        span(name='ed-label',class='domain-details')
+            | Ex
+        +text({name:'extradamage',class:'inventory-details span-1',placeholder:'traDamage'})
+        span(name='RR-label',class='domain-details')
+            | Re
+        +text({name:'RR',class:'inventory-details span-1',placeholder:'rolls'})
         +adaptiveTextarea({name:'description',class:'underlined domain-details',placeholder:'Description'})
 
 
@@ -50,12 +58,18 @@ mixin inventoryExpandedDetails()
             grid-column-start: span 6;
         }
         .span-5 {
-            grid-column-start: span 6;
+            grid-column-start: span 5;
         }
         .span-4 {
             grid-column-start: span 4;
         }
         .span-2 {
             grid-column-start: span 2;
+        }
+        .span-1 {
+            grid-column-start: span 1;
+        }
+        input.span-1 {
+            text-align: right;
         }
     }

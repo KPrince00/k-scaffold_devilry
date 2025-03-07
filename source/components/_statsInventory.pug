@@ -1,21 +1,32 @@
 include ./_inventoryDetails.pug
 section(class=`inventory`,aria-labelledby='inventory-details')#inventory.inventory-details.repeating-container
-    //- Some title or something idk
-    h5 Inventory
     section(class='repeating-controls-manual')
-            +customControlFieldset({name:'inventory'})
-                +collapse
-                +inventoryCollapsedDetails()
-                .headed-textarea.description.expanded
-                    +inventoryExpandedDetails()
+        h5 Inventory
+        +customControlFieldset({name:'inventory'})
+            +collapse
+            +inventoryCollapsedDetails()
+            .headed-textarea.description.expanded
+                +inventoryExpandedDetails()
 
 +scss.
     .inventory {
         grid-column-start: span 1;
         width: 100%;
+        height: 12em; 
 
         .repeating-controls-manual {
-            position: absolute;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 100%;
+            scrollbar-width: none;
+            .repcontrol-button {
+                top: -2.6px;
+                position: absolute;
+            }
+        }
+
+        .repeating-controls-manual::-webkit-scrollbar, .repeating-controls-manual::-webkit-scrollbar-button {
+            display: none;
         }
     }
 
@@ -30,6 +41,7 @@ section(class=`inventory`,aria-labelledby='inventory-details')#inventory.invento
 
     .repcontainer {
         gap: var(--tiny-gap);
+
         .repitem {
             input.collapse {
                 right: 0px;

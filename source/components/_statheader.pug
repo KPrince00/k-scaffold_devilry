@@ -15,18 +15,19 @@ header(data-i18n-aria-label='character header')#character-header.header.span-all
         +input-label({
             label:'Predator Type',
             inputObj:{name:'predator',class:'littlein',type:'text'},
-            divObj:{class:'span-4'},
-            spanObj:{role:'heading','aria-level':5,class:'littlein'}
-        })
-        +input-label({
-            label:'Fear Rating',
-            inputObj:{name:'fear',class:'littlein',type:'number'},
+            divObj:{class:'span-3'},
             spanObj:{role:'heading','aria-level':5,class:'littlein'}
         })
         +input-label({
             label:'Character Concept',
             inputObj:{name:'concept',class:'littlein',type:'text'},
             divObj:{class:'span-5'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'Fear Rating',
+            inputObj:{name:'fear',class:'littlein',type:'number'},
+            divObj:{class:'span-2'},
             spanObj:{role:'heading','aria-level':5,class:'littlein'}
         })
         +input-label({
@@ -41,14 +42,43 @@ header(data-i18n-aria-label='character header')#character-header.header.span-all
             spanObj:{role:'heading','aria-level':5,class:'littlein'}
         })
         +input-label({
-            label:'Nature/Demeanor',
-            inputObj:{name:'nature-demeanor',class:'littlein',type:'text'},
-            divObj:{class:'span-5'},
+            label:'Nature',
+            inputObj:{name:'nature',class:'littlein',type:'text'},
+            divObj:{class:'span-3'},
             spanObj:{role:'heading','aria-level':5,class:'littlein'}
         })
         +input-label({
-            label:'Experience Points',
-            inputObj:{name:'xp',class:'littlein centered',type:'text'},
-            divObj:{class:'span-5'},
+            label:'Demeanor',
+            inputObj:{name:'demeanor',class:'littlein',type:'text'},
+            divObj:{class:'span-3'},
             spanObj:{role:'heading','aria-level':5,class:'littlein'}
         })
+        +input-label({
+            label:'XP Spent',
+            inputObj:{name:'xp-spent',class:'littlein centered',type:'text'},
+            divObj:{class:'span-2'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+        +input-label({
+            label:'XP Earned',
+            inputObj:{name:'xp-earned',class:'littlein centered',type:'text'},
+            divObj:{class:'span-2'},
+            spanObj:{role:'heading','aria-level':5,class:'littlein'}
+        })
+
++scss.
+    #character-header {
+        .span-2 {
+            grid-column-start: span 2;
+        }
+        .span-3 {
+            grid-column-start: span 3;
+        }
+        .span-4 {
+            grid-column-start: span 4;
+        }
+        .span-6 {
+            grid-column-start: span 6;
+        }
+
+    }

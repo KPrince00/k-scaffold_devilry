@@ -13,14 +13,16 @@ mixin domain(initialLabel, discriminator)
 
 +scss.
     .repeating-controls-manual {
-        position: relative;
-        top: -23px;
+        //position: absolute;
     }
+
+    //TODO: Try putting the section at -1 and the button at 3 or something? remove from labels?? idk :P
     .domain-header {
         font-size: medium;
         border: 2px solid var(--borderColor);
         height: 2em;
         text-align: center;
+        margin-bottom: 1px;
     }
 
     input.domain-level {
@@ -37,6 +39,9 @@ mixin domain(initialLabel, discriminator)
     .repcontrol{
         .repcontrol_edit {
             font-size: small;
+        }
+        .repcontrol_button {
+            z-index: 3;
         }
     }
 

@@ -24,12 +24,57 @@ header(data-i18n-aria-label='info header')#info-header.header.span-all
             divObj:{class:'span-5'},
             spanObj:{role:'heading','aria-level':5,class:'bigin'}
         })
+        section.blood-surge-info.span-5#bsinfo
+            +input-label({
+                label:'Surge Bonus  &nbsp;&nbsp;',
+                inputObj:{name:'blood-surg-bonus',class:'midin domains',type:'number'},
+                divObj:{class:'span-5'},
+                spanObj:{role:'heading','aria-level':7,class:'midin'}
+            })
+            +input-label({
+                label:'Surge Cost  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+                inputObj:{name:'blood-surg-cost',class:'midin domains',type:'number'},
+                divObj:{class:'span-5'},
+                spanObj:{role:'heading','aria-level':7,class:'midin'}
+            })
+
 +scss.
     input.domains.bigin {
         padding-top: 0px !important;
         border: 2px dashed var(--bloodRed);
         height: 100%;
+        width: 6em !important;
     }
+
+    input.domains.midin {
+        padding-top: 0px !important;
+        border: 2px dashed var(--bloodRed);
+        height: 80%;
+        width: 3em !important;
+        color: var(--fontColor);
+    }
+
+    span.midin {
+        color: var(--fontColor) !important;
+    }
+
     .info-header-details {
         height: 100%;
+    }
+
+    .domains-header{
+        .info-header-details {
+            grid-template-columns:repeat(20,1.5em) !important;
+        }
+        #bsinfo.blood-surge-info {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            width: 100%;
+
+            label.input-label {
+                flex-direction: row !important;
+                height: 45%;
+            }
+        }
     }

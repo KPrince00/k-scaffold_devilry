@@ -29,4 +29,5 @@ const rollAttribute = async function(event){
      //Now we finish our roll, which tells Roll20 to actually display it in chat.
     finishRoll(roll.rollId,computeObj);
 }
-k.registerFuncs(rollAttribute);
+
+k.registerFuncs({rollAttribute});

@@ -16,6 +16,16 @@ include ./_minMaxInput.pug
         inputObj:{name:'regen',type:'text'},
         spanObj:{role:'heading','aria-level':5,class:'big-leftLabel'}
     })
+    +input-label({
+        label:'Health Bonus',
+        inputObj:{name:'healthbonus',type:'text'},
+        spanObj:{role:'heading','aria-level':5,class:'big-leftLabel'}
+    })
+    +input-label({
+        label:'Movement Speed',
+        inputObj:{name:'movspeed',type:'text'},
+        spanObj:{role:'heading','aria-level':5,class:'big-leftLabel'}
+    })
 +scss.
     .hp-section.hp-section.hp-section {
         width: 100%;
@@ -24,6 +34,7 @@ include ./_minMaxInput.pug
             display: flex;
             width: 100%;
             justify-content: space-between;
+            margin-top: 1px;
         }
 
         input {

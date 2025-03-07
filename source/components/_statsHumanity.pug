@@ -1,29 +1,35 @@
 include ./_pipFill.pug
-.footer-humanity
-    +pipFill('humanity',null,10,null,false)
-    +input-label({
-        label:'Homogenize &nbsp;&nbsp;',
-        inputObj:{name:'homog-bonus',type:'number'},
-        spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
-    })
-    +input-label({
-        label:'Mortal Penalty &nbsp;&nbsp;',
-        inputObj:{name:'mortal-pen',type:'number'},
-        spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
-    })
+.footer-pips
+    .footer-humanity
+        +pipFill('humanity','[]',10,null,true)
+        +input-label({
+            label:'Homogenize &nbsp;&nbsp;',
+            inputObj:{name:'homog-bonus',type:'number'},
+            spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
+        })
+        +input-label({
+            label:'Mortal Penalty &nbsp;&nbsp;',
+            inputObj:{name:'mortal-pen',type:'number'},
+            spanObj:{role:'heading','aria-level':5,class:'leftLabel'}
+        })
+    include ./_statsHunger.pug
+
 +scss.
-    .footer-humanity {
+    .footer-pips {
         grid-column-start: span 2;
+    }
+    .footer-humanity {
         .fill-left__radio {
             background-color: var(--humanityColor);
             margin-right: 0.22rem;
             border: 2px solid var(--tickBorderColor);
             height: 1.8em;
             width: 1.8em;
+            z-index: 3;
         }
 
         .pips-container {
-            margin-bottom: 0.6em;
+            height: 4.5em;
         }
 
         .input-label {
@@ -39,5 +45,30 @@ include ./_pipFill.pug
             text-align: center;
             align-self: right;
             flex: 0 0 0;
+        }
+
+        .disable-checkbox.disable-checkbox.disable-checkbox.disable-checkbox {
+            background:transparent;
+            position:relative;
+            z-index:2;
+            top:-1.7em;
+            left:0;
+            display: flex;
+            .fill-left__radio {
+                background-color: transparent;
+                margin-right: 0.25rem;
+                border: 2px solid transparent;
+                height: 1.8em;
+                width: 1.8em;
+                margin-right: 0.20rem;
+            }
+
+            .fill-left__radio {
+                border-bottom: 2px solid transparent;
+            }
+
+            .fill-left__radio:checked {
+                border-bottom: 2px solid crimson;
+            }
         }
     }

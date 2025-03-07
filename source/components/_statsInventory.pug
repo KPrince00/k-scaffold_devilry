@@ -1,1 +1,49 @@
-section#inventory
+include ./_inventoryDetails.pug
+section(class=`inventory`,aria-labelledby='inventory-details')#inventory.inventory-details.repeating-container
+    //- Some title or something idk
+    h5 Inventory
+    section(class='repeating-controls-manual')
+            +customControlFieldset({name:'inventory'})
+                +collapse
+                +inventoryCollapsedDetails()
+                .headed-textarea.description.expanded
+                    +inventoryExpandedDetails()
+
++scss.
+    .inventory {
+        grid-column-start: span 1;
+        width: 100%;
+
+        .repeating-controls-manual {
+            position: absolute;
+        }
+    }
+
+    .repcontrol{
+        .repcontrol_edit {
+            font-size: small;
+        }
+        .repcontrol_button {
+            z-index: 3;
+        }
+    }
+
+    .repcontainer {
+        gap: var(--tiny-gap);
+        .repitem {
+            input.collapse {
+                right: 0px;
+                top: -2px;
+                z-index: 3;
+                color: var(--textColor);
+            }
+            .repcontrol_del {
+                z-index: 3;
+                position: relative;
+            }
+            .repcontrol_move {
+                z-index: 3;
+                position: relative;
+            }
+        }
+    }
